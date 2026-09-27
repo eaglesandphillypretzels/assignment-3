@@ -119,7 +119,7 @@ You should see a success message.
 
 # 🧩 3. Clone the Repository
 
-Now you can safely clone the course project:
+Now you can safely clone the app:
 
 ```bash
 git clone <repository-url>
