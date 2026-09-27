@@ -64,7 +64,7 @@ def test_addition(a: Number, b: Number, expected: Number) -> None:
     >>> test_addition(-1, 1, 0)
     """
     # Create an instance of the Operations class
-    
+    instance = Operations()
     # Call the 'addition' method with the provided arguments
     result = Operations.addition(a, b)
     
@@ -250,7 +250,7 @@ def test_division_by_zero(a: Number, b: Number) -> None:
     Steps:
     1. Attempt to call the 'division' method with arguments 'a' and 'b', which should raise a ValueError.
     2. Use pytest's 'raises' context manager to catch the expected exception.
-    3. Assert that the error message contains "Division by zero is not allowed.".
+    3. Assert that the error message contains "Cannot divide by zero.".
 
     Example:
     >>> test_division_by_zero(1, 0)
@@ -258,11 +258,11 @@ def test_division_by_zero(a: Number, b: Number) -> None:
     """
     
     # Use pytest's context manager to check for a ValueError when dividing by zero
-    with pytest.raises(ValueError, match="Division by zero is not allowed.") as excinfo:
+    with pytest.raises(ValueError, match="Cannot divide by zero.") as excinfo:
         # Attempt to divide 'a' by 'b', which should raise a ValueError
         Operations.division(a, b)
     
     # Assert that the exception message contains the expected error message
-    assert "Division by zero is not allowed." in str(excinfo.value), \
-        f"Expected error message 'Division by zero is not allowed.', but got '{excinfo.value}'"
+    assert "Cannot divide by zero." in str(excinfo.value), \
+        f"Expected error message 'Cannot divide by zero.', but got '{excinfo.value}'"
 
